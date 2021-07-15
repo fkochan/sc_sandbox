@@ -26,7 +26,7 @@ contract FarmToken is ERC20 {
     // Amount must be greater than zero
     require(_amount > 0, "amount cannot be 0");
 
-    // Transfer MyToken to smart contract
+    // Transfer Dao Token to smart contract
     token.safeTransferFrom(msg.sender, address(this), _amount);
 
     // Mint FarmToken to msg sender
@@ -37,7 +37,7 @@ contract FarmToken is ERC20 {
     // Burn FarmTokens from msg sender
     _burn(msg.sender, _amount);
 
-    // Transfer MyTokens from this smart contract to msg sender
+    // Transfer Dao Tokens from this smart contract to msg sender
     token.safeTransfer(msg.sender, _amount);
     }
 }
